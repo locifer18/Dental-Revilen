@@ -116,7 +116,9 @@ export function TestimonialsCarousel() {
                         {current.patientName}
                       </h4>
                       {current.verified && (
-                        <CheckCircle2 className="w-4 h-4 text-pine-700 shrink-0" title="Verified Patient Review" />
+                        <span title="Verified Patient Review">
+                          <CheckCircle2 className="w-4 h-4 text-pine-700 shrink-0" />
+                        </span>
                       )}
                     </div>
                     <span className="text-xs text-stone-500 block">
