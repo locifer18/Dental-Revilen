@@ -33,7 +33,7 @@ export function SectionHeader({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className={cn("flex flex-col max-w-3xl mb-12 sm:mb-16", alignStyles[align], className)}
+      className={cn("flex flex-col max-w-3xl mb-8 sm:mb-10", alignStyles[align], className)}
     >
       {badge && (
         <div className={cn(
@@ -58,7 +58,7 @@ export function SectionHeader({
 
       {subtitle && (
         <p className={cn(
-          "mt-5 text-lg sm:text-xl leading-relaxed font-light font-sans",
+          "mt-3 text-base sm:text-lg leading-relaxed font-light font-sans",
           dark ? "text-ivory-300/80" : "text-stone-500"
         )}>
           {subtitle}

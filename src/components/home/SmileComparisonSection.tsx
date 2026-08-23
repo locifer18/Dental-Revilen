@@ -13,7 +13,7 @@ export function SmileComparisonSection() {
   const currentCase = transformationsData[activeCaseIndex];
 
   return (
-    <section className="py-16 sm:py-24 bg-white overflow-hidden">
+    <section className="py-12 sm:py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Transformation Studio"
@@ -27,7 +27,7 @@ export function SmileComparisonSection() {
         />
 
         {/* Case Switcher Tabs — horizontal scroll on mobile */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-8 justify-start sm:justify-center">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-5 justify-start sm:justify-center">
           {transformationsData.map((c, idx) => (
             <button
               key={c.id}

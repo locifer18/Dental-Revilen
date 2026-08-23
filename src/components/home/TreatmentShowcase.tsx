@@ -28,7 +28,7 @@ export function TreatmentShowcase() {
   );
 
   return (
-    <section className="py-20 sm:py-28 bg-ivory-100">
+    <section className="py-12 sm:py-16 bg-ivory-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Clinical Excellence"
@@ -43,7 +43,7 @@ export function TreatmentShowcase() {
         />
 
         {/* Category filters */}
-        <div className="flex items-center justify-center gap-2 flex-wrap mb-12">
+        <div className="flex items-center justify-center gap-2 flex-wrap mb-7">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -137,7 +137,7 @@ export function TreatmentShowcase() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-8 text-center">
           <Button href="/treatments" variant="outline" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
             View All 12 Dental Procedures
           </Button>

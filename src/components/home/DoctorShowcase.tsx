@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 
 export function DoctorShowcase() {
   return (
-    <section className="py-20 sm:py-28 bg-ivory-100">
+    <section className="py-12 sm:py-16 bg-ivory-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Specialist Faculty"
@@ -85,7 +85,7 @@ export function DoctorShowcase() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-8 text-center">
           <Button href="/doctors" variant="outline" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
             Meet All 6 Faculty Specialists
           </Button>

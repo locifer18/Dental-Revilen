@@ -25,7 +25,7 @@ export function TestimonialsCarousel() {
 
   return (
     <section
-      className="py-20 sm:py-28 bg-pine-950 relative overflow-hidden"
+      className="py-12 sm:py-16 bg-pine-950 relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -49,7 +49,7 @@ export function TestimonialsCarousel() {
 
         <div className="max-w-4xl mx-auto">
           {/* Glass card */}
-          <div className="glass-apple-dark rounded-4xl p-8 sm:p-12 border border-white/8 shadow-glass-dark relative overflow-hidden">
+          <div className="glass-apple-dark rounded-3xl p-6 sm:p-10 border border-white/8 shadow-glass-dark relative overflow-hidden">
             {/* Giant decorative quote */}
             <div className="absolute top-6 right-8 font-serif text-[8rem] leading-none text-gold-400/8 select-none pointer-events-none">
               &ldquo;

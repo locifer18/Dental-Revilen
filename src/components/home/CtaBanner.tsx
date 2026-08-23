@@ -8,7 +8,7 @@ import { clinicConfig } from "@/data/clinicConfig";
 
 export function CtaBanner() {
   return (
-    <section className="py-20 sm:py-28 hero-gradient-bg relative overflow-hidden">
+    <section className="py-12 sm:py-16 hero-gradient-bg relative overflow-hidden">
       {/* Decorative rings */}
       <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-gold-400/8 pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full border border-gold-400/5 pointer-events-none" />
@@ -21,7 +21,7 @@ export function CtaBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-apple-dark rounded-4xl p-10 sm:p-16 border border-white/8 shadow-glass-dark text-center space-y-7"
+          className="glass-apple-dark rounded-3xl p-8 sm:p-12 border border-white/8 shadow-glass-dark text-center space-y-5"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-400/10 border border-gold-400/25 text-gold-300">
             <Sparkles className="w-3.5 h-3.5" />
