@@ -1,10 +1,11 @@
+"use client";
+
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/Badge";
+import { motion } from "framer-motion";
 
 export interface SectionHeaderProps {
   badge?: string;
-  badgeVariant?: "default" | "pine" | "gold" | "stone" | "luxury";
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   align?: "left" | "center" | "right";
@@ -14,7 +15,6 @@ export interface SectionHeaderProps {
 
 export function SectionHeader({
   badge,
-  badgeVariant = "pine",
   title,
   subtitle,
   align = "center",
@@ -28,37 +28,42 @@ export function SectionHeader({
   };
 
   return (
-    <div className={cn("flex flex-col max-w-3xl mb-12 sm:mb-16", alignStyles[align], className)}>
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className={cn("flex flex-col max-w-3xl mb-12 sm:mb-16", alignStyles[align], className)}
+    >
       {badge && (
-        <Badge
-          variant={dark ? "luxury" : badgeVariant}
-          size="md"
-          dot
-          className="mb-3.5"
-        >
+        <div className={cn(
+          "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.18em] font-sans mb-4 self-start",
+          align === "center" && "self-center",
+          align === "right" && "self-end",
+          dark
+            ? "bg-gold-400/10 border border-gold-400/25 text-gold-300"
+            : "bg-pine-50 border border-pine-200/60 text-pine-800"
+        )}>
+          <span className={cn("w-1.5 h-1.5 rounded-full", dark ? "bg-gold-400" : "bg-pine-600")} />
           {badge}
-        </Badge>
+        </div>
       )}
 
-      <h2
-        className={cn(
-          "font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] font-normal",
-          dark ? "text-ivory-50" : "text-charcoal-950"
-        )}
-      >
+      <h2 className={cn(
+        "font-serif font-light leading-[1.1] tracking-tight",
+        dark ? "text-ivory-50" : "text-charcoal-950"
+      )}>
         {title}
       </h2>
 
       {subtitle && (
-        <p
-          className={cn(
-            "mt-4 text-base sm:text-lg leading-relaxed font-light",
-            dark ? "text-ivory-300" : "text-stone-600"
-          )}
-        >
+        <p className={cn(
+          "mt-5 text-lg sm:text-xl leading-relaxed font-light font-sans",
+          dark ? "text-ivory-300/80" : "text-stone-500"
+        )}>
           {subtitle}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 }

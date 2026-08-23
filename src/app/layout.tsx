@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Inter, DM_Serif_Display } from "next/font/google";
 import "@/app/globals.css";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
@@ -8,6 +9,29 @@ import { AskOraModal } from "@/components/ai-assistant/AskOraModal";
 import { ToastProvider } from "@/components/ui/Toast";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { clinicConfig } from "@/data/clinicConfig";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   themeColor: "#0F382C",
@@ -59,19 +83,17 @@ export const metadata: Metadata = {
     description: clinicConfig.subTagline,
     images: ["https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className={`scroll-smooth ${cormorant.variable} ${inter.variable} ${dmSerif.variable}`}
+    >
       <head>
         <StructuredData />
       </head>
@@ -81,8 +103,6 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
-
-          {/* Floating UI Elements */}
           <WhatsAppFloatingBtn />
           <AskOraModal />
         </ToastProvider>

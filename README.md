@@ -65,7 +65,7 @@ npm run start
 
 ## 🛡️ Medical Safety & Compliance
 
-* **Emergency Triage**: If a patient describes emergency symptoms (e.g. trauma, severe bleeding, breathing distress) in the "Ask Revilen" AI Receptionist, it immediately triggers the Emergency Hotline notice (`+91 80 4965 8800`).
+* **Emergency Triage**: If a patient describes emergency symptoms (e.g. trauma, severe bleeding, breathing distress) in the "Ask Revilen" AI Receptionist, it immediately triggers the Emergency Hotline notice (`+91 626 884 4871`).
 * **Ethical Disclaimers**: Clear sample demo disclosures are included on all transformation cases and medical copy.
 
 ---

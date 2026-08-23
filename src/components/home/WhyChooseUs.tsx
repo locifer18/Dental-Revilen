@@ -1,71 +1,93 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/common/SectionHeader";
-import { ShieldCheck, Cpu, Heart, Sparkles, Scale, Lock, Clock, Smile } from "lucide-react";
+import { ShieldCheck, Cpu, Heart, Sparkles, Scale, Lock } from "lucide-react";
+
+const pillars = [
+  {
+    icon: ShieldCheck,
+    color: "pine",
+    title: "Hospital-grade sterilization",
+    description: "Every instrument is sterilized in our German MELAG autoclave and opened in front of you. Same standard as a surgical theatre.",
+  },
+  {
+    icon: Sparkles,
+    color: "gold",
+    title: "Completely painless injections",
+    description: "The Wand® system delivers numbing fluid so slowly you won't feel a thing. Most patients are surprised it's already done.",
+  },
+  {
+    icon: Cpu,
+    color: "pine",
+    title: "3D scans, not gooey trays",
+    description: "Our intraoral scanner maps your full mouth in under 60 seconds. No mess, no gagging, and far more accurate results.",
+  },
+  {
+    icon: Scale,
+    color: "gold",
+    title: "Clear pricing & 0% EMI",
+    description: "You get a full cost breakdown before we start. Split payments across 3–12 months at zero interest, approved instantly.",
+  },
+  {
+    icon: Heart,
+    color: "pine",
+    title: "Private suites, not open bays",
+    description: "Sound-insulated rooms with 4K ceiling screens and noise-cancelling headphones. Designed for people who hate the dentist.",
+  },
+  {
+    icon: Lock,
+    color: "gold",
+    title: "Lifetime implant warranty",
+    description: "Swiss Straumann & Nobel Biocare implants carry a lifetime international warranty. Zirconia crowns are guaranteed for 15 years.",
+  },
+];
 
 export function WhyChooseUs() {
-  const pillars = [
-    {
-      icon: <ShieldCheck className="w-6 h-6 text-pine-800" />,
-      title: "German Class-B Sterilization",
-      description: "Fractionated pre-vacuum MELAG autoclave meeting strict European EN 13060 cleanroom standards. Every kit unsealed in front of you.",
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-gold-600" />,
-      title: "Computerized Painless Anesthesia",
-      description: "The Wand® Single Tooth Anesthesia delivers numbing fluid micro-drop by micro-drop below your body's pain perception threshold.",
-    },
-    {
-      icon: <Cpu className="w-6 h-6 text-pine-800" />,
-      title: "100% Powderless 3D Impressions",
-      description: "No gooey silicone impression trays. Our 3Shape intraoral scanner captures full arches in under 60 seconds with micron accuracy.",
-    },
-    {
-      icon: <Scale className="w-6 h-6 text-gold-600" />,
-      title: "Zero Hidden Fees & 0% EMI",
-      description: "100% upfront transparent treatment roadmaps. Flexible 0% interest EMI options for 3, 6, 9, or 12 months with paperless approval.",
-    },
-    {
-      icon: <Heart className="w-6 h-6 text-pine-800" />,
-      title: "Private Acoustical Luxury Suites",
-      description: "Relax in sound-insulated private suites featuring ceiling 4K entertainment screens and noise-cancelling headphones.",
-    },
-    {
-      icon: <Lock className="w-6 h-6 text-gold-600" />,
-      title: "Lifelong Warranty Protection",
-      description: "Lifetime international manufacturer warranties on Swiss Straumann & Nobel Biocare implants, plus 15-year warranty on zirconia crowns.",
-    },
-  ];
-
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="The Revilen Standard"
           title={
             <>
-              Six pillars of <br />
-              <span className="italic text-pine-900 font-serif">uncompromising dental care.</span>
+              Six things that make
+              <br />
+              <em className="not-italic shimmer-text">us different.</em>
             </>
           }
-          subtitle="Why discerning patients and healthcare leaders choose Revilen Dental Studio for their restorative and cosmetic dentistry."
+          subtitle="We built every part of this clinic around one goal — making you feel safe, informed, and completely at ease."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {pillars.map((pillar, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="p-8 rounded-3xl bg-stone-50/70 border border-stone-200/80 hover:bg-white hover:shadow-elevated transition-all duration-300 group hover:-translate-y-1"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="group p-8 rounded-3xl glass-apple hover:shadow-elevated hover:border-gold-400/25 transition-all duration-400 hover:-translate-y-1.5"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white shadow-soft flex items-center justify-center mb-5 border border-stone-200 group-hover:scale-105 transition-transform">
-                {pillar.icon}
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 ${
+                pillar.color === "gold"
+                  ? "bg-gold-50 border border-gold-200/60"
+                  : "bg-pine-50 border border-pine-200/60"
+              }`}>
+                <pillar.icon className={`w-5 h-5 ${pillar.color === "gold" ? "text-gold-600" : "text-pine-700"}`} />
               </div>
-              <h3 className="font-serif text-xl font-medium text-charcoal-950 mb-2">
+
+              {/* Clear readable title */}
+              <h3 className="font-sans text-lg font-semibold text-charcoal-900 mb-2.5 leading-snug">
                 {pillar.title}
               </h3>
-              <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+
+              {/* Readable body */}
+              <p className="text-base text-stone-500 leading-relaxed font-sans font-normal">
                 {pillar.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

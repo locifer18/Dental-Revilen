@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     console.error("Chat API error:", error);
     return NextResponse.json(
       {
-        error: "We encountered an issue processing your query. Please call our clinic concierge at +91 80 4965 8800.",
+        error: "We encountered an issue processing your query. Please call our clinic concierge at +91 626 884 4871.",
       },
       { status: 500 }
     );

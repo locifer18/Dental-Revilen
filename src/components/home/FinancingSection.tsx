@@ -29,11 +29,11 @@ export function FinancingSection() {
           badge="Transparent Financing"
           title={
             <>
-              World-class dentistry, <br />
-              <span className="italic text-pine-900 font-serif">accessible with 0% interest.</span>
+              World-class care, <br />
+              <span className="italic text-pine-900 font-serif">pay in easy instalments.</span>
             </>
           }
-          subtitle="We believe financial transparency is foundational to patient trust. Calculate your comfortable monthly investment with zero hidden charges."
+          subtitle="Split any treatment across 3–12 months at 0% interest. Instant approval, no paperwork."
         />
 
         {/* Embedded Interactive EMI Calculator */}
@@ -50,10 +50,10 @@ export function FinancingSection() {
                 {f.icon}
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-charcoal-950 font-serif">
+                <h4 className="text-base font-semibold text-charcoal-950 font-serif">
                   {f.title}
                 </h4>
-                <p className="text-xs text-stone-500 font-light mt-1 leading-relaxed">
+                <p className="text-sm text-stone-500 font-light mt-1 leading-relaxed">
                   {f.desc}
                 </p>
               </div>

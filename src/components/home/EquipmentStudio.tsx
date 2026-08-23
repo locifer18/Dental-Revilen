@@ -17,9 +17,8 @@ export function EquipmentStudio() {
 
   return (
     <section className="py-16 sm:py-24 bg-pine-950 text-ivory-50 relative overflow-hidden">
-      {/* Architectural Glows */}
-      <div className="absolute top-1/4 -left-40 w-96 h-96 bg-pine-800/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-80 h-80 bg-gold-600/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Single lightweight glow */}
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-gold-600/8 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -31,8 +30,26 @@ export function EquipmentStudio() {
               <span className="italic text-gold-300 font-serif">Precision you can trust.</span>
             </>
           }
-          subtitle="Hospital-grade German sterilization, 3D computer-guided bone mapping, and 25x surgical magnification eliminate guesswork from modern dentistry."
+          subtitle="Hospital-grade German sterilization, 3D bone mapping, and 25x surgical magnification. No guesswork."
         />
+
+        {/* Mobile: horizontal scroll equipment selector */}
+        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-3 mb-6 lg:hidden">
+          {equipmentData.map((eq) => (
+            <button
+              key={eq.id}
+              type="button"
+              onClick={() => setSelectedEquipmentId(eq.id)}
+              className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+                eq.id === selectedEquipmentId
+                  ? "bg-gold-400 text-charcoal-950 border-gold-400"
+                  : "bg-pine-900/60 text-ivory-300 border-pine-800"
+              }`}
+            >
+              {eq.name.split(" ").slice(0, 2).join(" ")}
+            </button>
+          ))}
+        </div>
 
         {/* Main Equipment Interactive Hub */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -124,8 +141,8 @@ export function EquipmentStudio() {
             </AnimatePresence>
           </div>
 
-          {/* Right Column: Equipment Selector List */}
-          <div className="lg:col-span-5 space-y-3">
+          {/* Right Column: Equipment Selector List — desktop only */}
+          <div className="lg:col-span-5 space-y-3 hidden lg:block">
             <span className="text-xs font-semibold uppercase tracking-widest text-gold-400 block mb-2">
               Select Dental Equipment
             </span>

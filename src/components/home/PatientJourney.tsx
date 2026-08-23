@@ -49,15 +49,14 @@ export function PatientJourney() {
           badge="The Patient Journey"
           title={
             <>
-              Modern dentistry, <br />
-              <span className="italic text-pine-900 font-serif">a calmer experience.</span>
+              From first scan <br />
+              <span className="italic text-pine-900 font-serif">to lasting smile.</span>
             </>
           }
-          subtitle="From your first 3D optical scan to your lifelong maintenance, every step is choreographed for maximum comfort and clinical predictability."
+          subtitle="Five simple steps. No jargon, no surprises. Just a calm, well-planned visit from start to finish."
         />
 
-        {/* 5-Step Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 relative pt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 relative pt-4">
           {steps.map((step, idx) => (
             <div
               key={step.number}
@@ -73,10 +72,10 @@ export function PatientJourney() {
                   </div>
                 </div>
 
-                <h4 className="font-serif text-lg font-semibold text-charcoal-950 mb-2 leading-snug">
+                <h4 className="font-serif text-xl font-semibold text-charcoal-950 mb-2.5 leading-snug">
                   {step.title}
                 </h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
                   {step.description}
                 </p>
               </div>

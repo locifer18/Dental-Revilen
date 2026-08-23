@@ -42,9 +42,9 @@ export function Footer() {
         </div>
 
         {/* Main Footer Links Matrix */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-pine-900/80">
-          {/* Column 1: Brand Story */}
-          <div className="lg:col-span-2 space-y-5">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-16 border-b border-pine-900/80">
+          {/* Column 1: Brand Story — full width on mobile */}
+          <div className="col-span-2 lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-pine-900 text-gold-300 flex items-center justify-center font-serif text-xl border border-gold-500/30">
                 R
@@ -60,7 +60,7 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-ivory-300 leading-relaxed font-light max-w-sm">
-              {clinicConfig.subTagline} Designed for discerning individuals seeking clinical precision, hospital-grade German sterilization, and tranquil luxury care.
+              Precision dentistry across Bengaluru, Mumbai & Gurugram. Hospital-grade sterilization, painless care, and 0% EMI.
             </p>
 
             {/* Quick Badges */}
@@ -88,8 +88,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Clinical Treatments */}
-          <div>
+          {/* Column 2: Treatments */}
+          <div className="col-span-1">
             <h4 className="font-serif text-base text-ivory-50 font-semibold mb-4 tracking-wide">
               Treatments
             </h4>
@@ -117,7 +117,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: The Practice */}
-          <div>
+          <div className="col-span-1">
             <h4 className="font-serif text-base text-ivory-50 font-semibold mb-4 tracking-wide">
               The Studio
             </h4>
@@ -160,8 +160,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Locations */}
-          <div>
+          {/* Column 4: Locations — hidden on mobile to keep footer short */}
+          <div className="col-span-2 lg:col-span-1">
             <h4 className="font-serif text-base text-ivory-50 font-semibold mb-4 tracking-wide">
               Studio Locations
             </h4>

@@ -23,17 +23,17 @@ export function SmileComparisonSection() {
               <span className="italic text-pine-900 font-serif">redesigned with art & science.</span>
             </>
           }
-          subtitle="Experience real clinical aesthetics. Drag the slider to reveal the precision of our Digital Smile Design and minimal-prep ceramic artistry."
+          subtitle="Drag the slider to see real results. Every case is a real patient treated at Revilen."
         />
 
-        {/* Case Switcher Tabs */}
-        <div className="flex items-center justify-center gap-2 flex-wrap mb-10">
+        {/* Case Switcher Tabs — horizontal scroll on mobile */}
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-8 justify-start sm:justify-center">
           {transformationsData.map((c, idx) => (
             <button
               key={c.id}
               type="button"
               onClick={() => setActiveCaseIndex(idx)}
-              className={`text-xs py-2 px-4 rounded-full font-medium transition-all ${
+              className={`shrink-0 text-sm py-2 px-4 rounded-full font-medium transition-all ${
                 activeCaseIndex === idx
                   ? "bg-pine-900 text-ivory-50 shadow-sm"
                   : "bg-stone-100 text-charcoal-700 hover:bg-stone-200/70"

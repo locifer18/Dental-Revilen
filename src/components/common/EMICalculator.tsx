@@ -54,7 +54,7 @@ export function EMICalculator() {
         <label className="block text-xs font-semibold uppercase tracking-wider text-stone-400 mb-3">
           Or Select a Popular Procedure
         </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
           {presets.map((preset) => {
             const isSelected = cost === preset.cost;
             return (
@@ -62,13 +62,13 @@ export function EMICalculator() {
                 key={preset.name}
                 type="button"
                 onClick={() => setCost(preset.cost)}
-                className={`text-xs py-2 px-3.5 rounded-full transition-all border ${
+                className={`shrink-0 text-sm py-2 px-4 rounded-full transition-all border ${
                   isSelected
                     ? "bg-pine-900 text-ivory-50 border-pine-900 shadow-sm"
                     : "bg-stone-50 text-charcoal-700 border-stone-200 hover:bg-stone-100"
                 }`}
               >
-                {preset.name} ({formatINR(preset.cost)})
+                {preset.name}
               </button>
             );
           })}

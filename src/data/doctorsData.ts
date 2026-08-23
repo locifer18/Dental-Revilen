@@ -65,7 +65,7 @@ export const doctorsData: Doctor[] = [
     ],
     bio: "Ranked among India's top 1% Invisalign providers. Dr. Rohan has treated over 2,400 aligner cases, specializing in complex bite corrections without tooth extractions.",
     fullBio: "Dr. Rohan Kapoor combines digital biomechanics with facial aesthetics to sculpt balanced facial profiles. An alumnus of Manipal University, he is an Invisalign Platinum Elite Provider and an international key opinion leader. He champions non-extraction orthodontic protocols that expand airways and enhance youthful facial support.",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     education: [
       {
         degree: "MDS - Orthodontics & Dentofacial Orthopedics",
@@ -112,7 +112,7 @@ export const doctorsData: Doctor[] = [
     ],
     bio: "Renowned micro-endodontist with over 4,500 successful root canals performed under 25x surgical magnification. A specialist in completely painless single-sitting tooth preservation.",
     fullBio: "Dr. Meera Nambiar is known for her extraordinarily gentle clinical touch and relentless commitment to saving natural teeth. Having trained in advanced micro-surgical endodontics in Germany, she utilizes Carl Zeiss dental operating microscopes to locate even the most complex calcified canals, ensuring long-term tooth survival with absolute zero pain.",
-    image: "https://images.unsplash.com/photo-1594824813501-48e02d8479e0?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     education: [
       {
         degree: "MDS - Conservative Dentistry & Endodontics",
@@ -206,7 +206,7 @@ export const doctorsData: Doctor[] = [
     ],
     bio: "Champion of anxiety-free, playful dentistry for kids and teens. Dr. Siddharth turns dental checkups into joyful learning adventures.",
     fullBio: "Dr. Siddharth Verma believes every child deserves to grow up with positive dental memories. Having specialized at Nair Hospital Dental College, Mumbai, he employs behavioral shaping, nitrous oxide conscious sedation, and painless laser dentistry to treat cavities, early alignment, and dental trauma with tenderness and smiles.",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     education: [
       {
         degree: "MDS - Pediatric and Preventive Dentistry",
