@@ -50,7 +50,7 @@ export function SectionHeader({
       )}
 
       <h2 className={cn(
-        "font-serif font-light leading-[1.1] tracking-tight",
+        "font-serif font-light leading-[1.1] tracking-tight text-3xl sm:text-4xl lg:text-5xl",
         dark ? "text-ivory-50" : "text-charcoal-950"
       )}>
         {title}

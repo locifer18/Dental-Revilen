@@ -1,66 +1,59 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { transformationsData } from "@/data/transformationsData";
 import { ImageComparisonSlider } from "@/components/ui/ImageComparisonSlider";
-import { SectionHeader } from "@/components/common/SectionHeader";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { Sparkles, Calendar, UserCheck, ShieldAlert, ArrowRight } from "lucide-react";
+import { Calendar, ShieldAlert } from "lucide-react";
 
 export default function SmileGalleryPage() {
-  const [selectedFilter, setSelectedFilter] = useState<string>("all");
+  const [selectedFilter, setSelectedFilter] = useState("all");
 
   const filters = [
-    { id: "all", label: "All Cases" },
-    { id: "porcelain-veneers", label: "Porcelain Veneers" },
-    { id: "invisalign-aligners", label: "Invisalign Aligners" },
-    { id: "dental-implants", label: "Dental Implants" },
-    { id: "teeth-whitening", label: "Teeth Whitening" },
+    { id: "all", label: "All" },
+    { id: "porcelain-veneers", label: "Veneers" },
+    { id: "invisalign-aligners", label: "Invisalign" },
+    { id: "dental-implants", label: "Implants" },
+    { id: "teeth-whitening", label: "Whitening" },
   ];
 
-  const filteredCases = transformationsData.filter((c) => {
-    if (selectedFilter === "all") return true;
-    return c.treatmentSlug === selectedFilter;
-  });
+  const filtered = transformationsData.filter((c) => selectedFilter === "all" || c.treatmentSlug === selectedFilter);
 
   return (
-    <div className="py-12 sm:py-20 bg-stone-50/40">
+    <div className="py-10 sm:py-16 bg-stone-50/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge variant="luxury" size="md" dot className="mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pine-50 border border-pine-200/60 text-pine-800 text-xs font-semibold uppercase tracking-widest font-sans mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-pine-600" />
             Smile Transformations
-          </Badge>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-950 font-normal tracking-tight">
-            Before & After Clinical Transformations
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal-950 font-normal tracking-tight leading-tight">
+            Before & After Results
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 font-light leading-relaxed">
-            Drag the comparison slider on each case study to inspect how minimal-prep ceramics, digital clear aligners, and guided implants transform real aesthetics.
+          <p className="mt-3 text-sm sm:text-base text-stone-500 leading-relaxed font-sans">
+            Drag the slider on each case to see the real transformation.
           </p>
         </div>
 
-        {/* Ethical Demo Notice Strip */}
-        <div className="mb-10 max-w-4xl mx-auto p-4 rounded-2xl bg-gold-50/80 border border-gold-200/80 flex items-center gap-3 text-xs text-charcoal-800">
-          <ShieldAlert className="w-5 h-5 text-gold-700 shrink-0" />
-          <p className="leading-relaxed font-light">
-            <strong>Sample Clinical Demonstration:</strong> In compliance with ethical healthcare standards, individual patient dental results may vary based on starting bone health, jaw alignment, and hygiene maintenance.
-          </p>
+        {/* Disclaimer */}
+        <div className="mb-8 max-w-3xl mx-auto p-3.5 rounded-xl bg-gold-50/80 border border-gold-200/60 flex items-start gap-3 text-xs text-charcoal-700 font-sans">
+          <ShieldAlert className="w-4 h-4 text-gold-700 shrink-0 mt-0.5" />
+          <p className="leading-relaxed"><strong>Sample Demonstration:</strong> Individual results may vary based on bone health, jaw alignment, and hygiene maintenance.</p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center justify-center gap-2 flex-wrap mb-12">
+        {/* Filter pills — horizontal scroll on mobile */}
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 mb-8 justify-start sm:justify-center">
           {filters.map((f) => (
             <button
               key={f.id}
               type="button"
               onClick={() => setSelectedFilter(f.id)}
-              className={`text-xs sm:text-sm py-2 px-4 rounded-full font-medium transition-all ${
+              className={`text-xs py-2 px-4 rounded-full font-medium transition-all shrink-0 font-sans ${
                 selectedFilter === f.id
-                  ? "bg-pine-900 text-ivory-50 shadow-sm"
-                  : "bg-white text-charcoal-700 hover:bg-stone-200/70 border border-stone-200"
+                  ? "bg-pine-900 text-ivory-50"
+                  : "bg-white text-charcoal-700 hover:bg-stone-100 border border-stone-200"
               }`}
             >
               {f.label}
@@ -68,54 +61,35 @@ export default function SmileGalleryPage() {
           ))}
         </div>
 
-        {/* Cases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
-          {filteredCases.map((caseItem) => (
-            <div
-              key={caseItem.id}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-soft flex flex-col justify-between"
-            >
-              <div className="space-y-4">
-                {/* Slider */}
-                <ImageComparisonSlider
-                  beforeImage={caseItem.beforeImage}
-                  afterImage={caseItem.afterImage}
-                  beforeLabel="Before"
-                  afterLabel="After Result"
-                  aspectRatio="16/9"
-                />
+        {/* Cases grid — 1-col mobile, 2-col sm+ */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          {filtered.map((item) => (
+            <div key={item.id} className="bg-white rounded-2xl p-4 sm:p-6 border border-stone-200 shadow-soft flex flex-col">
+              <ImageComparisonSlider
+                beforeImage={item.beforeImage}
+                afterImage={item.afterImage}
+                beforeLabel="Before"
+                afterLabel="After"
+                aspectRatio="16/9"
+              />
 
-                <div>
-                  <span className="text-[11px] uppercase font-semibold text-pine-800 tracking-wider font-sans block mb-1">
-                    {caseItem.treatmentType}
-                  </span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-medium text-charcoal-950">
-                    {caseItem.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 font-light mt-1.5 leading-relaxed">
-                    {caseItem.description}
-                  </p>
-                </div>
-
-                <div className="p-3.5 bg-stone-50 rounded-2xl border border-stone-200/60 text-xs">
-                  <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider block">
-                    Clinical Protocol
-                  </span>
-                  <p className="font-medium text-charcoal-800 mt-0.5">{caseItem.clinicalNotes}</p>
+              <div className="mt-4 space-y-2 flex-1">
+                <span className="text-[11px] uppercase font-semibold text-pine-700 tracking-widest font-sans">{item.treatmentType}</span>
+                <h3 className="text-base font-semibold text-charcoal-950 font-sans leading-snug">{item.title}</h3>
+                <p className="text-sm text-stone-500 leading-relaxed font-sans">{item.description}</p>
+                <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/60">
+                  <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider block font-sans">Clinical Protocol</span>
+                  <p className="text-xs font-medium text-charcoal-700 mt-0.5 font-sans">{item.clinicalNotes}</p>
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs">
-                <span className="text-stone-500 flex items-center gap-1">
+              {/* Footer — stack on mobile */}
+              <div className="mt-4 pt-3 border-t border-stone-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:justify-between">
+                <span className="text-xs text-stone-400 flex items-center gap-1 font-sans">
                   <Calendar className="w-3.5 h-3.5 text-pine-700" />
-                  <span>{caseItem.duration}</span>
+                  {item.duration}
                 </span>
-
-                <Button
-                  href={`/book?treatment=${caseItem.treatmentSlug}`}
-                  variant="primary"
-                  size="sm"
-                >
+                <Button href={`/book?treatment=${item.treatmentSlug}`} variant="primary" size="sm" className="w-full sm:w-auto justify-center">
                   Book This Treatment
                 </Button>
               </div>
@@ -124,9 +98,9 @@ export default function SmileGalleryPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <Button href="/book" variant="gold" size="lg">
-            Schedule Your Smile Transformation Consultation &rarr;
+        <div className="mt-10 sm:mt-14 text-center">
+          <Button href="/book" variant="gold" size="lg" className="w-full sm:w-auto">
+            Schedule Your Smile Consultation →
           </Button>
         </div>
       </div>

@@ -92,22 +92,22 @@ export function TreatmentShowcase() {
                   )}
 
                   <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-ivory-50 text-xs">
-                    <span className="font-medium bg-charcoal-900/75 px-2.5 py-1 rounded-full backdrop-blur-sm font-sans">
+                    <span className="font-medium bg-charcoal-900/75 px-2.5 py-1 rounded-full backdrop-blur-sm font-sans text-xs">
                       {treatment.priceDisplay}
                     </span>
-                    <span className="text-2xs text-gold-300 font-semibold font-sans">{treatment.emiDisplay}</span>
+                    <span className="text-xs text-gold-300 font-semibold font-sans">{treatment.emiDisplay}</span>
                   </div>
                 </div>
 
                 {/* Body */}
                 <div className="p-6 sm:p-7 flex-1">
-                  <span className="text-2xs font-semibold uppercase tracking-[0.18em] text-pine-700 font-sans block mb-1.5">
+                  <span className="text-[11px] font-semibold uppercase tracking-widest text-pine-700 font-sans block mb-1.5">
                     {treatment.tag}
                   </span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-medium text-charcoal-950 group-hover:text-pine-900 transition-colors leading-snug">
+                  <h3 className="font-sans text-base sm:text-lg font-semibold text-charcoal-950 group-hover:text-pine-900 transition-colors leading-snug">
                     {treatment.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-stone-500 font-light mt-2 line-clamp-2 leading-relaxed font-sans">
+                  <p className="text-sm text-stone-500 mt-2 line-clamp-2 leading-relaxed font-sans">
                     {treatment.shortDescription}
                   </p>
 
@@ -123,7 +123,7 @@ export function TreatmentShowcase() {
 
                 {/* Footer */}
                 <div className="px-6 sm:px-7 pb-6 pt-2 flex items-center justify-between border-t border-stone-100/80">
-                  <span className="text-2xs text-stone-400 flex items-center gap-1 font-sans">
+                  <span className="text-xs text-stone-400 flex items-center gap-1 font-sans">
                     <Clock className="w-3 h-3" />
                     <span>{treatment.duration.split("(")[0]}</span>
                   </span>

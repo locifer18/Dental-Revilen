@@ -28,7 +28,7 @@ export function CtaBanner() {
             <span className="text-sm font-semibold uppercase tracking-[0.18em] font-sans">Priority Consultation Booking</span>
           </div>
 
-          <h2 className="font-serif font-light text-ivory-50 leading-[1.08]">
+          <h2 className="font-serif font-light text-ivory-50 leading-[1.08] text-3xl sm:text-4xl lg:text-5xl">
             Your best smile is
             <br className="hidden sm:block" />
             <em className="not-italic shimmer-text">one visit away.</em>

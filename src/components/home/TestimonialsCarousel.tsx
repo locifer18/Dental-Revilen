@@ -71,13 +71,13 @@ export function TestimonialsCarousel() {
                       <Star key={i} className={`w-4 h-4 ${i < current.rating ? "text-gold-400 fill-gold-400" : "text-white/20"}`} />
                     ))}
                   </div>
-                  <span className="text-2xs font-semibold px-3 py-1.5 rounded-full bg-pine-800/60 text-pine-200 border border-pine-700/40 font-sans tracking-wide uppercase">
+                  <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-pine-800/60 text-pine-200 border border-pine-700/40 font-sans tracking-wide uppercase">
                     {current.treatment}
                   </span>
                 </div>
 
                 {/* Quote */}
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light text-ivory-50 leading-snug">
+                <h3 className="font-sans text-xl sm:text-2xl font-semibold text-ivory-50 leading-snug">
                   &ldquo;{current.quote}&rdquo;
                 </h3>
 
@@ -93,13 +93,13 @@ export function TestimonialsCarousel() {
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <h4 className="font-serif font-medium text-ivory-100 text-base">{current.patientName}</h4>
+                        <h4 className="font-sans font-semibold text-ivory-100 text-sm">{current.patientName}</h4>
                         {current.verified && <CheckCircle2 className="w-4 h-4 text-pine-400 shrink-0" />}
                       </div>
-                      <span className="text-2xs text-ivory-400/60 font-sans">{current.location} · {current.date}</span>
+                      <span className="text-xs text-ivory-400/60 font-sans">{current.location} · {current.date}</span>
                     </div>
                   </div>
-                  <span className="text-2xs text-ivory-400/40 hidden sm:block font-sans">Verified Google Review</span>
+                  <span className="text-xs text-ivory-400/40 hidden sm:block font-sans">Verified Google Review</span>
                 </div>
               </motion.div>
             </AnimatePresence>

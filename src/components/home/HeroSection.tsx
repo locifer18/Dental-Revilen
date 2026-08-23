@@ -51,7 +51,7 @@ export function HeroSection() {
               </motion.div>
 
               {/* Headline */}
-              <motion.h1 {...fadeUp(0.1)} className="font-serif font-light text-ivory-50 leading-[1.04]">
+              <motion.h1 {...fadeUp(0.1)} className="font-serif font-light text-ivory-50 leading-[1.04] text-[2.4rem] sm:text-5xl lg:text-6xl">
                 Modern dentistry.
                 <br />
                 <em className="not-italic shimmer-text">Designed around</em>

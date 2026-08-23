@@ -158,9 +158,11 @@ export default function DoctorDetailPage({ params }: DoctorPageProps) {
                   href={`/book?doctor=${doctor.slug}`}
                   variant="primary"
                   size="lg"
+                  className="w-full sm:w-auto"
                   leftIcon={<Calendar className="w-4 h-4 text-gold-400" />}
                 >
-                  Book Direct Consultation with {doctor.name.split(" ")[1]}
+                  <span className="sm:hidden">Book Consultation</span>
+                  <span className="hidden sm:inline">Book Direct Consultation with {doctor.name.split(" ")[1]}</span>
                 </Button>
               </div>
             </div>

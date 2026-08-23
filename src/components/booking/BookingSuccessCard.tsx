@@ -41,10 +41,10 @@ export function BookingSuccessCard({ booking, onReset }: BookingSuccessCardProps
         <span className="text-xs uppercase tracking-widest text-gold-600 font-bold">
           Appointment Confirmed
         </span>
-        <h3 className="font-serif text-3xl sm:text-4xl text-charcoal-950 font-normal mt-1">
+        <h3 className="font-sans text-2xl sm:text-3xl font-bold text-charcoal-950 mt-1">
           Your Smile Session is Reserved
         </h3>
-        <p className="text-sm text-stone-600 mt-2 max-w-md">
+        <p className="text-sm text-stone-500 mt-2 max-w-md font-sans leading-relaxed">
           A confirmation SMS and WhatsApp message have been sent to{" "}
           <strong className="text-charcoal-900 font-semibold">{booking.patientPhone}</strong>.
         </p>
@@ -138,12 +138,12 @@ export function BookingSuccessCard({ booking, onReset }: BookingSuccessCardProps
       </div>
 
       {/* Action Buttons Hub */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-2">
         <a
           href={googleCalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto px-5 py-3 rounded-full bg-pine-900 text-ivory-50 text-xs font-semibold hover:bg-pine-800 transition-colors flex items-center justify-center gap-2 shadow-soft"
+          className="w-full px-5 py-3.5 rounded-full bg-pine-900 text-ivory-50 text-sm font-semibold hover:bg-pine-800 transition-colors flex items-center justify-center gap-2 shadow-soft font-sans"
         >
           <Calendar className="w-4 h-4 text-gold-400" />
           <span>Add to Google Calendar</span>
@@ -153,7 +153,7 @@ export function BookingSuccessCard({ booking, onReset }: BookingSuccessCardProps
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#25D366] text-white text-xs font-semibold hover:bg-[#1EBE5D] transition-colors flex items-center justify-center gap-2 shadow-soft"
+          className="w-full px-5 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1EBE5D] transition-colors flex items-center justify-center gap-2 shadow-soft font-sans"
         >
           <MessageCircle className="w-4 h-4 fill-white" />
           <span>Send to WhatsApp</span>
@@ -161,7 +161,7 @@ export function BookingSuccessCard({ booking, onReset }: BookingSuccessCardProps
 
         <button
           onClick={handlePrint}
-          className="w-full sm:w-auto px-5 py-3 rounded-full border border-stone-300 hover:bg-stone-100 text-charcoal-800 text-xs font-semibold transition-colors flex items-center justify-center gap-2"
+          className="w-full px-5 py-3.5 rounded-full border border-stone-300 hover:bg-stone-100 text-charcoal-800 text-sm font-semibold transition-colors flex items-center justify-center gap-2 font-sans"
         >
           <Printer className="w-4 h-4 text-stone-600" />
           <span>Print Pass</span>

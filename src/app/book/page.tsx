@@ -3,7 +3,6 @@
 import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { BookingWizard } from "@/components/booking/BookingWizard";
-import { Badge } from "@/components/ui/Badge";
 import { Sparkles, ShieldCheck, Clock, Loader2 } from "lucide-react";
 
 function BookingContent() {
@@ -16,15 +15,16 @@ function BookingContent() {
     <div className="py-10 sm:py-16 bg-stone-50/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <Badge variant="luxury" size="md" dot className="mb-3">
+        <div className="text-center max-w-xl mx-auto mb-8">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pine-50 border border-pine-200/60 text-pine-800 text-xs font-semibold uppercase tracking-widest font-sans mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-pine-600" />
             Digital Appointment Concierge
-          </Badge>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal-950 font-normal tracking-tight">
-            Schedule Your Smile Consultation
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl text-charcoal-950 font-normal tracking-tight leading-tight">
+            Schedule Your Consultation
           </h1>
-          <p className="mt-3 text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-            Reserve your 45-minute comprehensive visit with complimentary 3D optical scan, low-dose digital diagnostics, and bespoke specialist consultation.
+          <p className="mt-3 text-sm text-stone-500 font-sans leading-relaxed">
+            Reserve your 45-minute visit with complimentary 3D optical scan and specialist consultation.
           </p>
         </div>
 
@@ -35,21 +35,21 @@ function BookingContent() {
           initialLocationId={initialLocation}
         />
 
-        {/* Trust Badges under Form */}
-        <div className="mt-12 max-w-2xl mx-auto flex items-center justify-center gap-6 text-xs text-stone-500 font-light flex-wrap">
+        {/* Trust badges — wrap on mobile */}
+        <div className="mt-8 max-w-xl mx-auto flex items-center justify-center gap-4 text-xs text-stone-500 font-sans flex-wrap">
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-pine-700" />
-            <span>German Class-B Sterilization</span>
+            <span>Class-B Sterilization</span>
           </div>
-          <div>•</div>
+          <span className="hidden sm:block">·</span>
           <div className="flex items-center gap-1.5">
             <Sparkles className="w-4 h-4 text-gold-600" />
-            <span>Painless Computerized Anesthesia</span>
+            <span>Painless Anesthesia</span>
           </div>
-          <div>•</div>
+          <span className="hidden sm:block">·</span>
           <div className="flex items-center gap-1.5">
             <Clock className="w-4 h-4 text-pine-700" />
-            <span>Zero Waiting Room Delays</span>
+            <span>Zero Wait Times</span>
           </div>
         </div>
       </div>

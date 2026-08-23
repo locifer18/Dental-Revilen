@@ -17,7 +17,7 @@ export function AnnouncementBar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <div className="hidden md:flex items-center gap-2 text-gold-400/80 font-medium font-sans">
           <ShieldCheck className="w-3.5 h-3.5" />
-          <span className="text-2xs tracking-wide">NABH & German Class-B Sterilization</span>
+          <span className="text-xs tracking-wide">NABH & German Class-B Sterilization</span>
         </div>
 
         <div className="flex-1 text-center flex items-center justify-center gap-2">
@@ -33,7 +33,7 @@ export function AnnouncementBar() {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${clinicConfig.emergencyPhone.replace(/\s+/g, "")}`}
-            className="hidden sm:inline-flex items-center gap-1.5 text-ivory-400/70 hover:text-ivory-200 transition-colors font-medium font-sans text-2xs"
+            className="hidden sm:inline-flex items-center gap-1.5 text-ivory-400/70 hover:text-ivory-200 transition-colors font-medium font-sans text-xs"
           >
             <Phone className="w-3 h-3 text-gold-400" />
             <span>{clinicConfig.emergencyPhone}</span>

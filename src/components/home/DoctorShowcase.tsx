@@ -46,18 +46,18 @@ export function DoctorShowcase() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-ivory-50 text-xs">
-                  <span className="font-medium bg-pine-900/75 px-2.5 py-1 rounded-full backdrop-blur-sm text-2xs border border-pine-700/40 font-sans">
+                  <span className="font-medium bg-pine-900/75 px-2.5 py-1 rounded-full backdrop-blur-sm text-xs border border-pine-700/40 font-sans">
                     {doctor.experienceYears}+ Years Clinical Practice
                   </span>
-                  <span className="text-2xs text-gold-300 font-semibold font-sans">{doctor.verifiedCasesCount}+ Cases</span>
+                  <span className="text-xs text-gold-300 font-semibold font-sans">{doctor.verifiedCasesCount}+ Cases</span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6 sm:p-7 space-y-3 flex-1">
                 <div>
-                  <span className="text-2xs uppercase font-semibold text-pine-700 tracking-[0.18em] block font-sans">{doctor.specialty}</span>
-                  <h3 className="font-serif text-2xl font-medium text-charcoal-950 mt-0.5 group-hover:text-pine-900 transition-colors">
+                  <span className="text-[11px] uppercase font-semibold text-pine-700 tracking-widest block font-sans">{doctor.specialty}</span>
+                  <h3 className="font-sans text-lg font-semibold text-charcoal-950 mt-0.5 group-hover:text-pine-900 transition-colors">
                     {doctor.name}
                   </h3>
                   <p className="text-xs text-stone-400 font-medium mt-1 line-clamp-1 font-sans">{doctor.qualification}</p>
@@ -65,7 +65,7 @@ export function DoctorShowcase() {
                 <p className="text-sm text-stone-500 font-light leading-relaxed line-clamp-3 font-sans">{doctor.bio}</p>
                 <div className="pt-2 flex flex-wrap gap-1.5">
                   {doctor.subSpecialties.slice(0, 2).map((sub, sIdx) => (
-                    <span key={sIdx} className="text-2xs py-1 px-2.5 rounded-lg bg-stone-100 text-charcoal-600 font-medium font-sans">
+                    <span key={sIdx} className="text-xs py-1 px-2.5 rounded-lg bg-stone-100 text-charcoal-600 font-medium font-sans">
                       {sub}
                     </span>
                   ))}
